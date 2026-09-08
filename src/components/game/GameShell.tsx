@@ -13,14 +13,6 @@ export function GameShell() {
     hydrate();
   }, [hydrate]);
 
-  if (!ready) {
-    return (
-      <div className="flex min-h-dvh items-center justify-center bg-void font-display text-xl text-stone">
-        The field is gathering…
-      </div>
-    );
-  }
-
   if (phase === "title") return <TitleGate />;
 
   return (

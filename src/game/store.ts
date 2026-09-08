@@ -77,7 +77,7 @@ export const useGame = create<State>((set, get) => ({
   spoken: null,
   registers: null,
   notesOpen: false,
-  ready: false,
+  ready: true,
   hydrate: () => {
     const saved = typeof window === "undefined" ? defaultSave() : load();
     set({ ...saved, ready: true });
