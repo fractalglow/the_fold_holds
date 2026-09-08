@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void: #0e1216;
+  --color-void-2: #161b20;
+  --color-stone: #c4b8a4;
+  --color-mist: #8a9aa3;
+  --color-paper: #e8e4db;
+  --color-paper-dim: #b8b3a8;
+  --color-phosphor: #c5d4b8;
+  --color-ink: #d7d2c8;
+  --color-line: color-mix(in oklab, var(--color-paper) 14%, transparent);
+  --font-display: "Cormorant Garamond", Palatino, serif;
+  --font-body: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html,
+  body,
+  #app {
+    min-height: 100%;
+    background: var(--color-void);
+    color: var(--color-paper);
+  }
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+.field-mist {
+  animation: field-drift 28s linear infinite;
+}
+.field-pulse {
+  animation: field-glow 5.5s ease-in-out infinite;
+}
+@keyframes field-drift {
+  to {
+    transform: translateX(-8%);
+  }
+}
+@keyframes field-glow {
+  50% {
+    opacity: 0.9;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+  }
+}
