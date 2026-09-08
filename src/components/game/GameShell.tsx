@@ -6,7 +6,6 @@ import { useGame } from "@/game/store";
 
 export function GameShell() {
   const phase = useGame((s) => s.phase);
-  const ready = useGame((s) => s.ready);
   const hydrate = useGame((s) => s.hydrate);
 
   useEffect(() => {
